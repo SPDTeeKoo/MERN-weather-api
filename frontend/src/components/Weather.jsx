@@ -1,13 +1,15 @@
 import { Form, Container, Card, Button } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { weatherApi } from '../slices/weatherApiSlice';
+// import { useGetCurrentWeatherDataQuery } from '../slices/weatherApiSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Weather = () => {
   const [location, setLocation] = useState('');
+  //   const { data, isFetching } = useGetCurrentWeatherDataQuery('london,uk');
+  //   if (isFetching) console.log(data);
 
-  const weatherSelector = useSelector((state) => state.weatherApi);
-  const dispatch = useDispatch();
+  // const weatherSelector = useSelector((state) => state.weatherApi);
+  // const dispatch = useDispatch();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -33,6 +35,9 @@ const Weather = () => {
               Submit
             </Button>
           </Form>
+        </Card>
+        <Card className="p-5 d-flex flex-column align-items-center hero-card bg-light w-75">
+          <h1 className="text-center mb-4">Weather Info</h1>
         </Card>
       </Container>
     </div>
